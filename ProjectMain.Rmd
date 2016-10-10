@@ -85,6 +85,7 @@ print(paste0("The total number of payments made by medicare to the providers in 
 print(paste0("The average payment made per discharge in FY 2014 was $", format(avepmtperdisc, nsmall =2, big.mark = ","), "."))
 "The average payment made per discharge in FY 2014 was $12,446.70."
 
+Test 2
 
 - bivariate stats
 - some plots of the stats
