@@ -9,7 +9,30 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Definitions of Variables
+```{r, echo = FALSE}
+library(ggplot2)
+Meddata <- read.csv("Medicare_Provider_Charge_Inpatient_DRGALL_FY2014.csv")
+
+```
+
+## 1. Introduction
+Type the introduction here
+
+
+## 2.1 Description of the dataset
+
+```{r, echo = FALSE}
+NoObsx <- nrow(Meddata) #number of observations
+NoVarx <- ncol(Meddata) #number of variables
+NoDRG <- length(levels(Meddata$DRG.Definition)) #number of categories in DRG definitions
+
+print(paste0("There are ", format(NoObsx, big.mark = ","), " rows of data across ", NoVarx, " columns of variables. Notably, there were ", NoDRG, " types of clinical conditions and procedures furnished by the hospitals during patients' stay."))
+```
+
+The descriptions of the variables are summarised in the next section.
+
+
+## 2.2 Definitions of Variables
 
 The definitions of the variables are taken from the file provided in the source (Link: https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/Inpatient2014.html), "Medicare Inpatient PUF Methodology [PDF, 185KB]".
 
@@ -29,16 +52,4 @@ The definitions of the variables are taken from the file provided in the source 
 |Average Medicare Payments|The average amount that Medicare pays to the provider for Medicare's share of the MS-DRG. Average Medicare payment amounts include the MS-DRG amount, teaching, disproportionate share, capital, and outlier payments for all cases. Medicare payments DO NOT include beneficiary co-payments and deductible amounts nor any additional payments from third parties for coordination of benefits. Note: In general, Medicare FFS claims with dates-of-service or dates-of-discharge on or after April 1, 2013, incurred a 2 percent reduction in Medicare payment. This is in response to mandatory across-the-board reductions in Federal spending, also known as sequestration.| 
 
 
-```{r cars}
-summary(cars)
-```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
