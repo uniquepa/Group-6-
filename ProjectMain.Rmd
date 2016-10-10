@@ -72,6 +72,19 @@ The definitions of the variables are taken from the file provided in the source 
 
 ## 3 Descriptive Statistics 
 - univariate stats
+totaldischarges <- sum(Meddatax$Total.Discharges) #Total number of discharges covered by medicare in 2015
+totalpayments <- sum(Meddatax$TotalPayments) #Total payments made to hospitals by Medicare in 2015
+avepmtperdisc <- totalpayments / totaldischarges
+
+print(paste0("The total number of discharges covered by medicare in FY 2014 was ", format(totaldischarges, big.mark = ","), "."))
+[1] "The total number of discharges covered by medicare in FY 2014 was 7,297,885."
+
+print(paste0("The total number of payments made by medicare to the providers in FY 2014 was $", format(totalpayments, nsmall = 2, big.mark = ","), "."))
+[1] "The total number of payments made by medicare to the providers in FY 2014 was $90,834,586,996.93."
+
+print(paste0("The average payment made per discharge in FY 2014 was $", format(avepmtperdisc, nsmall =2, big.mark = ","), "."))
+"The average payment made per discharge in FY 2014 was $12,446.70."
+
 - bivariate stats
 - some plots of the stats
 - some written interpretation of the stats and plots
