@@ -15,8 +15,17 @@ Meddata <- read.csv("Medicare_Provider_Charge_Inpatient_DRGALL_FY2014.csv")
 
 ```
 
-## 1. Introduction
+## 1. Abstract or Executive Summary
+summarise our findings here.
+
+
+
+## 2. Introduction
 Type the introduction here
+- what dataset are we studying?
+- what type of data
+- what year
+- source? 
 
 
 ## 2.1 Description of the dataset
@@ -29,7 +38,15 @@ NoDRG <- length(levels(Meddata$DRG.Definition)) #number of categories in DRG def
 print(paste0("There are ", format(NoObsx, big.mark = ","), " rows of data across ", NoVarx, " columns of variables. Notably, there were ", NoDRG, " types of clinical conditions and procedures furnished by the hospitals during patients' stay."))
 ```
 
+The type of clinical conditions and procedures were specific. For example,
+
+```{r, echo = FALSE}
+head(levels(Meddata$DRG.Definition))
+```
+
+
 The descriptions of the variables are summarised in the next section.
+
 
 
 ## 2.2 Definitions of Variables
@@ -51,5 +68,39 @@ The definitions of the variables are taken from the file provided in the source 
 |Average Total Payments|The average total payments to all providers for the MS-DRG including the MSDRG amount, teaching, disproportionate share, capital, and outlier payments for all cases. Also included for in average total payments are co-payment and deductible amounts that the patient is responsible for and any additional payments by third parties for coordination of benefits|
 |Average Medicare Payments|The average amount that Medicare pays to the provider for Medicare's share of the MS-DRG. Average Medicare payment amounts include the MS-DRG amount, teaching, disproportionate share, capital, and outlier payments for all cases. Medicare payments DO NOT include beneficiary co-payments and deductible amounts nor any additional payments from third parties for coordination of benefits. Note: In general, Medicare FFS claims with dates-of-service or dates-of-discharge on or after April 1, 2013, incurred a 2 percent reduction in Medicare payment. This is in response to mandatory across-the-board reductions in Federal spending, also known as sequestration.| 
 
+
+
+## 3 Descriptive Statistics 
+- univariate stats
+- bivariate stats
+- some plots of the stats
+- some written interpretation of the stats and plots
+
+
+
+## 4 Correlation Analyses
+- correlation analyses
+- covered charge vs total payments?
+- covered charge vs total payments by state / by DRG?
+- others
+- written interpretation of the correlation tests. scatter plots?
+
+
+## 5 Regression Analyses
+- regression analyses
+- what is our dependent variable? what are we trying to find out?
+- independent variables and justifications?
+- stargazer if we have more than 1 model
+
+
+
+## 6 Results and Discussion
+- more in-depth discussion of our findings?
+- any conclusion?
+
+
+
+## 7 References
+- any references used? acknowledgement to dataset and definitions of variables
 
 
